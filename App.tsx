@@ -1,5 +1,6 @@
-import NavigationDemo from './src/screens/NavigationDemo';
+import PostApiDemo from '@/screens/PostApiDemo';
+
 
 export default function App() {
-  return <NavigationDemo />;
+  return <PostApiDemo />;
 }
