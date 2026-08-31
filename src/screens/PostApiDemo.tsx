@@ -3,28 +3,32 @@ export default function PostApiDemo() {
     const postData =  () => {
         const apiData = [
             {
-               id: 1,
-               name: 'saalim',
-               email: 'saalim@example.com'
+              userId: 1,
+               id: 11,
+               title: 'saalim',
+               body: 'saalim@example.com'
             },
                  {
-               id: 2,
-               name: 'vivek',
-               email: 'vivek@example.com'
+              userId: 2,
+               id: 20,
+               title: 'vivek',
+               body: 'vivek@example.com'
             },
                  {
-               id: 3,
-               name: 'nitin',
-               email: 'nitin@example.com'
+              userId: 3,
+               id: 30,
+               title: 'nitin',
+               body: 'nitin@example.com'
             }
         ];
     
         const arr = []
             for( var i in apiData) {
+               const encodeduserId = encodeURIComponent(apiData[i].userId);
                 const encodedData = encodeURIComponent(apiData[i].id);
-                const encodedName = encodeURIComponent(apiData[i].name);
-                const encodedEmail = encodeURIComponent(apiData[i].email);
-                arr.push(`id=${encodedData}&name=${encodedName}&email=${encodedEmail}`);
+                const encodedTitle = encodeURIComponent(apiData[i].title);
+                const encodedEmail = encodeURIComponent(apiData[i].body);
+                arr.push(`userId=${encodeduserId}&id=${encodedData}&title=${encodedTitle}&body=${encodedEmail}`);
             }
             arr.join('&');
             fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -39,6 +43,7 @@ export default function PostApiDemo() {
         <Button title="Fetch Data"
          onPress={postData} 
          /> 
+        
     </View>
   );
 }
