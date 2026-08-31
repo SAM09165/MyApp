@@ -1,6 +1,9 @@
-import PostApiDemo from '@/screens/PostApiDemo';
+import AsyncDemo from '@/screens/AsyncDemo';
+import React from 'react';
+
+
 
 
 export default function App() {
-  return <PostApiDemo />;
+  return <AsyncDemo />;
 }
